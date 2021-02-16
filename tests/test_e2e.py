@@ -33,5 +33,5 @@ class TestOne(BaseClass):
         confirm_page.choose_purchase_button().click()
         success_test = confirm_page.get_alert_text().text
         log.info("success_test: " + success_test)
-        assert "Success! Thank you!" in success_test
+        assert "Success! Thank you!" in success_test, f"Incorrect message: {success_test}.Exected:'Success! Thank you!'"
         self.driver.get_screenshot_as_file("screen.png")

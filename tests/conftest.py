@@ -20,7 +20,6 @@ def setup(request):
         driver = webdriver.Ie(executable_path="C:\WebDriverSelenium\IEDriverServer.exe")
     driver.get("https://www.rahulshettyacademy.com/angularpractice/")
     driver.maximize_window()
-
     request.cls.driver = driver
     yield
     driver.close()
