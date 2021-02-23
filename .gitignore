@@ -11,6 +11,9 @@
 *.so
 *.pyc
 *.html
+*.xml
+*.css
+*.xlsx
 
 
 # Packages #
