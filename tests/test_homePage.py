@@ -12,11 +12,9 @@ class TestHomePage(BaseClass):
         home_page = HomePage(self.driver)
         name_field = home_page.find_name_field()
         name_field[0].send_keys(get_data["firstName"])
-        pytest.set_trace()
         home_page.find_email_field().send_keys(get_data["email"])
         self.select_option_by_text(home_page.get_drop_down(), get_data["gender"])
         home_page.click_on_ckeckbox_ice_cream()
-
         # driver.find_element_by_css_selector("input[value='Submit']").click()
         home_page.click_on_submit_button()
         # REG ex for CSS
@@ -26,10 +24,10 @@ class TestHomePage(BaseClass):
         message = home_page.text_alert_message_class_name()
         print(message)
 
-        assert "Success! The Form has been submitted successfully!." in message
+        assert "Success! The Form has been submitted suааааааааааааccessfully!." in message
         self.driver.refresh()
         #driver.close()
 
-    @pytest.fixture(params=HomePageData.test_homePage_data)
+    @pytest.fixture(params=HomePageData.get_test_data("Testcase1"))
     def get_data(self, request):
         return request.param
